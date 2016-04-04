@@ -1,34 +1,52 @@
+/*this is needed for transparent image overlays for some reason*/
+html { height: 100%; }
+
 body {
-  font-family: 'Helvetica';
-  letter-spacing:-5px;
-  background:#eee;
-  color:#2E2E35;
+  font-family:'Helvetica';
+  letter-spacing:-2px;
+  background:#EAE8E2;
+  background-size:100%;
+  color:#333;
   margin:0;
   padding:0;
   font-weight:bold;
+}
+
+body.center {
+  font-family:'Helvetica';
+  letter-spacing:-2px;
+  background-position: center;
+  background:#EAE8E2;
+  background-size:100%;
+  color:#333;
+  margin:0;
+  padding: 2em;
+  font-weight:bold; 
+  text-align: center;
 }
 
 h1, h2, h3, p {
   margin:0;
 }
 
-strong, em, a {
+em, a {
   font-style:normal;
-  color:#FF708D;
+  color:#8A163A;
 }
 
 strong {
-  color: #27B7D1;
+  font-style: normal;
+  color: #278585;
 }
 
 a {
-  background: #694489;
-  color:#eee;
+  background:#278585;
+  color:#fff;
   text-decoration:none;
 }
 
 img {
-  width: 65%;
+  width:100%;
 }
 
 div {
@@ -41,22 +59,26 @@ div {
   line-height:97%;
 }
 
-pre {
-  font-family: 'Courier';
-  color: #777;
-  letter-spacing: 2px;
-  display: inline;
-}
-
-span {
-  background: #ddd;
-  display: inline;
-}
-
 div.center {
   text-align:center;
 }
 
 div.imageText {
-  text-shadow:0px 0px 5px rgba(0,0,0,0.2);
+  color: #fff;
+  text-shadow:0px 0px 10px rgba(0,0,0,0.5);
+}
+
+div.imageText strong {
+  color: #6AD2D2;
+}
+div.imageText em {
+  color: #FF9BBB;
+}
+
+notes {
+    display:none;
+}
+/* normally not good, but ok in context of full screen directional navigation */
+:focus {
+    outline: 0;
 }
