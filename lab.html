@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Introduction to Mapbox Studio & Mapbox GL</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href='big.css' rel='stylesheet' type='text/css' />
+    <style>
+    
+    .img-float {
+      padding: 0 2em 2em 2em;
+    }
+    .img-float img {
+      float: right;
+      width: 50%
+    }
+    .img-float p {
+      font-size: 2.5em;
+      line-height: 1em;
+      float: left;
+      display: block;
+      width: 47%
+    }
+
+    .quote {
+        font-family: serif;
+        letter-spacing: 2px;
+    }
+    
+    .tiles {
+        background-image: url(http://i.giphy.com/J2LWi9tyE2xeE.gif);
+        text-shadow: 3px 3px 5px #222;
+        color: #eee;
+    }
+    
+    .tilegif {
+        background-image: url(./images/tiles.gif);
+        background-repeat: no-repeat;
+        background-position: center 60px;
+    }
+    
+    .jstile {
+        background-image: url(./images/jstile.png);
+    }
+    
+    .mindblown {
+        background-image: url(http://i.giphy.com/DqSw5gyRQ5yPC.gif);
+        background-repeat: repeat;
+    }
+    .turtles {
+        background-image: url(./images/turtles.gif);
+        background-repeat: repeat;
+    }
+    
+    .studio {
+        background-image: url(./images/studio.png);
+        background-size: 100%;
+    }
+    
+    .save {
+        background-image: url(./images/save.png);
+        background-position: center 5px;
+        background-size: 80%;
+        color: #eee;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .tour {
+        background-image: url(./images/tour.png);
+        background-position: center 5px;
+        background-size: 30%;
+        background-repeat: no-repeat;
+    }
+    
+    .style-editor {
+        background-image: url(./images/style-editor.png);
+        background-position: center 5px;
+        background-size: 35%;
+        background-repeat: no-repeat;
+        text-shadow: 3px 3px 5px #222;
+    }
+    
+    .inspecting {
+        background-image: url(./images/inspecting.png);
+        background-position: center 5px;
+        background-size: 100%;
+        color: #eee;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .vector-sources {
+        background-image: url(./images/vector-sources.png);
+        background-position: center 5px;
+        background-size: 100%;
+        color: #eee;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .gray-land {
+        background-image: url(./images/gray-land.png);
+        background-position: center 55px;
+        background-size: 80%;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .z6to8 {
+        background-image: url(./images/z6to8.gif);
+        background-position: center 5px;
+        background-size: 80%;
+        background-repeat: no-repeat;
+    }
+    
+    .z4to2 {
+        background-image: url(./images/z4to2.gif);
+        background-position: center 5px;
+        background-size: 80%;
+        background-repeat: no-repeat;
+    }
+    
+    .search-sf {
+        background-image: url(./images/search-sf.gif);
+        background-position: center 5px;
+        background-size: 100%;
+    }
+    
+    .buildings {
+        background-image: url(./images/buildings.png);
+        background-position: center 5px;
+        background-size: 80%;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .white-land {
+        background-image: url(./images/white-land.png);
+        background-position: center 5px;
+        background-size: 80%;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .buildings16 {
+        background-image: url(./images/buildings16.gif);
+        background-position: center 5px;
+        background-size: 80%;
+        background-repeat: no-repeat;
+    }
+    
+    .parks {
+        background-image: url(./images/parks.png);
+        background-position: center 5px;
+        background-size: 80%;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .settings {
+        background-image: url(./images/settings.png);
+        background-position: center 5px;
+        background-size: 25%;
+        text-shadow: 3px 3px 5px #222;
+        background-repeat: no-repeat;
+    }
+    
+    .puppy {
+        background-image: url(./images/puppy.gif);
+        background-repeat: repeat;
+    }
+    
+    .confused {
+        background-image: url(./images/confused.gif);
+        background-size: auto;
+    }
+    
+    .pixel {
+        background-image: url(http://data.pcworld.cz/img/article_title/title_l/08/efdf19947d2f9d1b7fdab05501b87c.jpg);
+    }
+    
+    .r2 {
+        background-image: url(./images/r2.gif);
+    }
+    
+    .puppy1 {
+        background-image: url(./images/puppy1.gif);
+        background-repeat: repeat;
+    }
+    
+    .cactus {
+        background-image: url(./images/cactus.jpg);
+        background-repeat: no-repeat;
+        background-size: 75%;
+        background-position: center 5px;
+    }
+    </style>
+    <script src='big.js'></script>
+</head>
+
+<body>
+<div>Welcome to <em>day 2</em> of our tour of Mapbox!</div>
+<div>What did we cover last time?</div>
+<div>
+    <ol>
+        <li>A <strong>brief history</strong> of web maps</li>
+        <li><em>How GL works</em> and why it's awesome</li>
+        <li><strong>Walk-through</strong> of Mapbox Studio UI</li>
+        <li><em>Map-making</em> time</li>
+        <li>Mapbox GL JS overview</li>
+    </ol>
+</div>
+<div>What did you find <em>surprising</em>? What do you want to <strong>learn more</strong> about?</div>
+<div data-bodyclass="turtles">Awesome!</div>
+<div>Today we're going to dig in and write some <code>code</code>.</div>
+<div>We're going to talk about <em>Leaflet/Mapbox.js</em> and <strong>Mapbox GL JS</strong>.</div>
+<div>Both tools are <em>JavaScript</em> Libraries you can use to add <em>interactive maps</em> to a web page. Both are loaded with super handy methods for <strong>adding basemaps</strong>, <em>displaying custom data</em>, such as <em>GeoJSON</em>, handling <strong>user interactions</strong>, and a <em>whole bunch</em> more.</div>
+<div>Before we get started, let's all open up our <em>text editors</em>. If you're on a lab computer, you should already have <strong>Sublime Text</strong> installed. That's what I'll be using up here.</div>
+<div>If you don't have <strong>Sublime Text</strong>, you can use <em>Notepad</em> on windows or <em>TextEdit</em> on mac.</div>
+<div data-bodyclass="image_full"><img src="https://media.giphy.com/media/XTAqdwCL2oEus/giphy.gif">Let's get started!</div>
+<div>For now, just watch up here. I'm going to walk through a <strong>hello world</strong> example, then you'll recreate it on your computer.</div>
+<div>I'm going to start with a <em>template</em> from <a href="https://gist.githubusercontent.com/danswick/9c7e4ee48f06782130a25e9a927d0225/raw/e905b37ec5a4fdffe73436f1c9ee966cf0de1279/template.html">this link</a>.</div>
+<div>The <em>first awesome thing we can do</em> with Mapbox.js is make ourselves a <strong>map container</strong>.</div>
+<div>Wait, I thought this was about <em>Leaflet</em>?</div>
+<div>It is! (sort of)</div>
+<div><a href="https://www.mapbox.com/mapbox.js/api/v2.4.0/">Mapbox.js</a> is built <em>on top of Leaflet</em>. It contains <strong>all</strong> of Leaflet's methods and adds on a few handy Mapbox-y ones.</div>
+<div data-bodyclass="mindblown"></div>
+
+<div>ANYWAY</div>
+
+<div><pre>var map = L.mapbox.map('mapbox-map')</pre></div>
+<div>But it's <em>empty</em>. We haven't added any <em>tiles</em> to it yet.</div>
+<div>There are may free tiles on the web. Let's use some <strong>Mapbox</strong> tiles.</div>
+<div>
+    <pre>L.mapbox.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA';</pre>
+    <pre>var map = L.mapbox.map('mapbox-map', 'mapbox.streets').setView([37.72191, -122.47601], 15);</pre>
+</div>
+<div data-bodyclass="confused"></div>
+<div>First, we set our <a href="https://www.mapbox.com/help/define-access-token/">Mapbox access token</a>. This allows us to access Mapbox tiles.</div>
+<div>Then we did two things to our <code>map</code> variable:
+    <ol>
+        <li>We told mapbox to grab a style with the <a href="https://www.mapbox.com/help/define-map-id/">Map ID</a> <code>mapbox.streets</code>.</li>
+        <li>We centered our map on this building using the <code>setView()</code> method. This is a <em>built-in</em> method that tells the map container which tiles to grab and what part of the world it should be looking at.</li>
+    </ol>
+</div>
+<div>As <a href="http://twitter.com/mizmay">Stephanie May</a> would point out, what we have here is a <em>reference map</em>.</div>
+<div>A <strong>very nice</strong> referene map, but a reference map nonetheless.</div>
+
+<div>How about we <strong>add some data</strong>?</div>
+
+<div>Okay, let's code <em>together</em>! Fire up your <strong>text editor</strong> and grab the template code from <a href="https://gist.githubusercontent.com/danswick/9c7e4ee48f06782130a25e9a927d0225/raw/6680c1f71d4c0886f30641df450a57ef97adff18/reference-map.html">this link</a>.</div>
+<div>You'll also want to <em>sign in</em> to Mapbox and grab your <a href="https://www.mapbox.com/help/define-access-token/">access token</a>.</div>
+<div>Ready?</div>
+
+<div>What if we want to show <em>some data</em> on the map? Maybe <strong>this building</strong> we're sitting in.</div>
+<div><em>We can do that!</em></div>
+<div><pre>L.marker([37.72191, -122.47601]).addTo(map);</pre></div>
+<div>We added a <em>map marker</em> at the <strong>lat/lon</strong> of this building to the map.</div>
+<div>Last part. Let's add a popup to the marker so when we click on it it'll tell us what it's identifying.</div>
+<div><pre>L.marker([37.72191, -122.47601])
+.bindPopup("I luv maps!").addTo(map);</pre></div>
+<div>We binded a popup to the marker that says <em>I luv maps!</em></div>
+
+<div>Now it's <em>your turn</em>.</div>
+<div><strong>On your own or with a partner</strong>, add your custom style and change the map center.</div>
+<div><strong>Hint!</strong> You might want to check out this example on <a href="https://www.mapbox.com/mapbox.js/example/v1.0.0/stylelayer/">L.mapbox.styleLayer()</a>.</div>
+<div>Any idea why that method would be necessary?</div>
+<div data-bodyclass="turtles">Great job!</div>
+
+<div>Part 2: <em>Mapbox GL JS</em>.</div>
+<div>We're going to go through the <strong>same process</strong>, but with Mapbox GL JS instead of Mapbox.js.</div>
+
+<div>First, I'll build a <em>hello world</em> map, then we'll <strong>add markers together</strong>, and finally, you'll <em>customize your map</em> on your own.</div>
+
+<div>I'm going to grab a template from <a href="https://gist.githubusercontent.com/danswick/9c7e4ee48f06782130a25e9a927d0225/raw/075e33c500b9ba50b3940d104d57bd54cafcec5e/gl-template.html">this link</a>.</div>
+<div>What do you notice? What's <em>similar</em>? What's <strong>different</strong>?</div>
+
+<div>A couple of notes: 
+    <ol>
+        <li>Lat and lon are reversed. WTF?</li>
+        <li>There's no more style ID. Instead, there's a <a href="https://www.mapbox.com/help/define-style-url/">style URL</a>. Remember that from last time?</li>
+        <li>The zoom level is off by one. WTF?</li>
+    </ol>
+</div>
+
+<div data-bodyclass="image_full"><img src="https://media.giphy.com/media/XTAqdwCL2oEus/giphy.gif">Let's code together!</div>
+
+<div>Grab the template from <a href="https://gist.githubusercontent.com/danswick/9c7e4ee48f06782130a25e9a927d0225/raw/075e33c500b9ba50b3940d104d57bd54cafcec5e/gl-template.html">this link</a> and paste it into your text editor.</div>
+<div>Open up <a href="https://www.mapbox.com/mapbox-gl-js/example/geojson-markers/">this example</a>.</div>
+<div>What's going on here?</div>
+<div>There is <em>GeoJSON</em> right in the code.</div>
+<div>We have a new method called <em>addLayer()</em> that's doing something with symbols.</div>
+<div>A bunch of things are wrapped in a <code>map.on('style.load')</code> function. Why do you think that is?</div>
+
+<div>First, create your <em>map.on('style.load')</em> function.</div>
+<div><pre>map.on('style.load', function () {...});</pre></div>
+<div>Next, we add our <em>GeoJSON</em> as a <strong>source</strong>.</div>
+<div><pre>map.addSource("markers", {
+        "type": "geojson",
+        "data": {
+            "type": "FeatureCollection",
+            "features": [{
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-77.03238901390978, 38.913188059745586]
+                },
+                "properties": {
+                    "title": "Class!",
+                    "marker-symbol": "monument"
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.414, 37.776]
+                },
+                "properties": {
+                    "title": "Mapbox SF",
+                    "marker-symbol": "harbor"
+                }
+            }]
+        }
+    });</pre>
+</div>
+<div data-bodyclass="confused"></div>
+<div>Remember when we talked about separating <em>sources</em> and <em>styles</em> last time?</div>
+<div>With <em>Mapbox GL JS</em>, you can add <strong>new sources</strong> right in your code!</div>
+<div data-bodyclass="mindblown"></div>
+
+<div>Next! Add a <em>new layer</em> for our markers.</div>
+<div>
+    <pre>
+        map.addLayer({
+            "id": "markers",
+            "type": "symbol",
+            "source": "markers",
+            "layout": {
+                "icon-image": "{marker-symbol}-15",
+                "text-field": "{title}",
+                "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+                "text-offset": [0, 0.6],
+                "text-anchor": "top"
+            }
+        });
+    </pre>
+</div>
+
+<div>Remember last time when we talked about how <em>layers</em> are <strong>representations</strong> of <em>sources</em>?</div>
+<div>You just did that with JavaScript!</div>
+<div>Great job!</div>
+
+<div>Now, <em>on your own or with a partner</em>, add your custom style and change the marker location.</div>
+<div>CODING TIME</div>
+
+<div data-bodyclass="turtles">Great job!</div>
+
+<div><em>Whew!</em> We just covered a lot of ground. <strong>Let's do a quick recap and wrap up for the day</strong>.</div>
+    
+<div>What did we learn today?</div>
+<div>We learned about <em>the differences between Mapbox.js and Mapbox GL JS</em>!</div>
+<div>We learned how to add a <strong>custom style</strong> to our maps!</div>
+<div>We learned how to add and customize <strong>Markers</strong>!</div>
+<div>And we hacked on hella map code.</div>
+<div><em>HOLY CARPS, Y'ALL!</em> That's awesome!</div>
+<div>You <strong>totally kicked butt</strong> today. <em>Pat yourself on the back.</em></div>
+<div>Keep playing! <strong>Keep making stuff!</strong> It just gets <em>more fun</em>!</div>
+<div data-bodyclass='cactus'></div>
+<div>Thanks for having me!</div>
+<div>Dan Swick<br><strong>dan@mapbox.com</strong><br><em>@danswick</em></strong></div>
+
+
+
+
+
+</body>
+
+</html>
